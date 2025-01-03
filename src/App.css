@@ -1,0 +1,454 @@
+/* Global Styles */
+* {
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  z-index: -2;
+  background: linear-gradient(to bottom, #002b1b, #001f13); /* Darker gradient background */
+  position: relative; /* To position the binary code background */
+  height: fit-content;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Courier New', monospace;
+  color: #00ff00; /* Bright green for contrast */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+/* Binary Code Animation */
+.binary-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  height: 100%; /* Full height of the viewport */
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  z-index: -1; /* Make sure it's behind all the content */
+ /* Make it non-interactive */
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem; /* Adjust font size for better readability */
+  color: #00ff00; /* Bright green */
+  white-space: wrap;
+ 
+  animation: binaryScroll 10s linear infinite; /* Make binary scroll vertically */
+}
+#root{z-index: -3;}
+/* Base Styles for All Sections */
+section {
+  z-index: -3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 40px auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  background: linear-gradient(to top, #001f13, #002b1b); /* Darker section background */
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Start slightly down */
+  animation: fadeInUp 1s ease-out forwards; /* Add animation */
+}
+
+/* Hover effect */
+section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 255, 133, 0.15);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; /* Start as invisible */
+    transform: translateY(20px); /* Start slightly down */
+  }
+  60% {
+    opacity: 0.6; /* Fade in partially */
+    transform: translateY(10px); /* Move up a little */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+/* Shared Heading Styles */
+h2 {
+  text-align: center;
+  color: #00ff00; /* Bright green */
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Paragraph Styles */
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff; /* White text */
+  background-color: #001f13; /* Dark green background */
+  font-family: 'Courier New', monospace; /* BIOS-style font */
+  text-align: justify;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Styles for Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  color: #fff; /* Bright green */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+}
+
+ul li::before {
+  content: "✓";
+  color: #00ff00;/* Bright green */
+  margin-right: 10px;
+  font-size: xx-large;
+}
+
+/* Specific Section Styles */
+.about-section, .experiences, .education, .contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  gap: 30px;
+  z-index: -3;
+}
+.content-left>a{ margin-top: 2rem;}
+
+.contact,.education,.experiences {display: flex;
+flex-wrap: wrap;}
+.about-section .content-left, .experiences .content-left, 
+.education .content-left, .contact .content-left {
+  flex: 1;
+}
+
+.about-section .image-right, .experiences .image-right, 
+.education .image-right, .contact .image-right {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image Styling */
+.animated-image {
+  margin-top: 5%;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #005f3e; /* Darker green border */
+  animation: floatImage 3s ease-in-out infinite;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rem2 { 
+  font-size: 1.6rem;
+}
+
+/* Floating Animation */
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.contact>div>p {
+  font-size: 1.2rem;
+  color: #00ff00;
+  font-weight: 600;
+  
+}
+.contact>div>p >a,.contact>div>p >span{
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  
+  
+}
+.contact > div > p > a:hover {
+  color: #00ff00; /* Changes the text color to bright green when hovered */
+  transform: scale(1.05); /* Slightly enlarges the element on hover */
+}
+
+.contact>div {
+
+  display:flex; flex-wrap: wrap; margin: 10px;
+padding: auto;}
+
+/* Button Styling */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #005f3e, #002b1b);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.3s ease-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #002b1b, #005f3e);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-section{flex-direction: column;}
+
+  .rem2 {
+    font-size: 1rem;
+  }
+
+  .content-left, .image-right {
+    flex: 1;
+    text-align: center;
+  }
+
+  .animated-image {
+    width: 80%;  /* Adjust the width as needed */
+    height: auto;  /* Keep aspect ratio */
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.8rem;  /* Adjust heading size */
+  }
+
+  p, ul li {
+    font-size: 1rem;  /* Adjust paragraph size */
+  }
+}
+
+/* CSS styles for the Project Grid */
+.project-grid {
+  display: flex;  /* Switch to grid for more control */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+}
+.header>p{  align-items: center;
+  text-align: center;}
+.header {
+
+  align-items: center;
+  text-align: center;
+  color: #00ff00;
+  padding: 20px;
+  background: linear-gradient(to bottom, #001f13, #002b1b);
+}
+
+/* Individual card styles */
+.project-card {
+  background: linear-gradient(to bottom, #001f13, #002b1b);
+  color:#ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 255, 133, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 32.1%;
+  opacity: 0; /* Start as invisible */
+  transform: scale(0.9); /* Start slightly smaller */
+  animation: fadeInScale 1s ease-out forwards; /* Add animation */
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 255, 133, 0.2);
+}
+
+/* Animation keyframes for project card */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0; /* Start as invisible */
+    transform: scale(0.9); /* Start slightly smaller */
+  }
+  60% {
+    opacity: 0.6; /* Fade in partially */
+    transform: scale(1.02); /* Slightly scale up */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* End at the original size */
+  }
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00ff00; /* Bright green */
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom
+: 15px;
+}
+.project-link {
+  pointer-events: auto;
+  z-index: 1;
+}
+.project-link {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    min-width: 100%;
+  }
+}
+
+
+
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.content-left {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.number-face {
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem; /* Adjust for bigger or smaller text */
+  color: #ffffff;
+  text-align: center;
+  white-space: pre;
+}
+.skills-section >div>p {color:#00ff00}
+.skills-section >div>p>i {color:#00ff00}
+.skills-section {
+  background-color: #000; /* Black background */
+  color: #fff; /* Green text */
+  font-family: 'Courier New', monospace; /* Monospaced font */
+  padding: 15px;
+
+  width:90%;
+
+  text-align: left;
+}
+
+.retro-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  
+}
+
+.skill-item {
+  width: 45%; /* Adjust based on the layout */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 255, 133, 0.1);
+
+background-color: #002b1b;
+
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+
+.skill-bar {
+background-color: #002b1b;/* Darker green background */
+  height: 10px;
+  width: 100%;
+  border: 0.1px solid #00ff00;
+  margin: 5px 0;
+  position: relative;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background-color: #fff;
+}
+
+.skill-level {
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.link {
+  text-align: center;
+  color: #00ff00; /* Bright green */
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.contact>div>p >a,.contact>div>p >span {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animated-image {
+      animation: none;
+  }
+}
+
+.contact > div > p a, .contact > div > p span {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
