@@ -2,15 +2,7 @@ import React from 'react';
 import '../App.css'; 
 const Experience = () => {
   const experiences = [
-    {
-        role: 'Trainee',
-        company: 'Orange Jo',
-        duration: 'May 2024 (Currently Enrolled)',
-        responsibilities: [
-            'Check refill and transaction processes in the Orange Payment System with the customer support team.',
-            'Collaborate with team members to ensure smooth operations and accurate reporting.'
-          ]
-      },
+
     {
       role: 'Full Stack Web Development Trainee',
       company: 'Orange Academy, Al-Salt',
