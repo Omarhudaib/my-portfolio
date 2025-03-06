@@ -52,9 +52,10 @@ ${generateRandomBinaryLine()}
     <section className="about-section">
       <div className="content-left">
         <h2>About Me</h2>
-        <p className="rem2">
-          I am a Computer Science graduate with experience in web development, specializing in technologies like Laravel, React, and WordPress. Currently, I am enhancing my skills through a Full Stack Web Development course at Orange Jo.
-        </p>
+    <p className="rem2">
+  I am a Computer Science graduate with strong experience in web development, specializing in technologies such as Laravel, React, and WordPress. I have successfully developed and deployed several web applications, including projects that integrate complex backend APIs, dynamic frontend interfaces, and user-centric designs. I am passionate about building high-quality, scalable, and efficient web solutions that deliver value to clients.
+</p>
+
       </div>
       <div className="number-face">
         <pre>{binaryFace}</pre>
