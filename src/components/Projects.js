@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../App.css'; 
+import '../App.css';
 
 const Projects = () => {
   const projects = [
@@ -54,7 +53,10 @@ const Projects = () => {
                 View Project
               </a>
             ) : (
-              <span className="project-link disabled" onClick={() => alert('No valid link for this project.')}>
+              <span 
+                className="project-link disabled" 
+                onClick={() => alert('No valid link for this project.')}
+              >
                 View Project
               </span>
             )}
