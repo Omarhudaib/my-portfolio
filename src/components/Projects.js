@@ -35,31 +35,26 @@ const Projects = () => {
     },
   ];
 
+  const handleCardClick = (link) => {
+    if (link === '#') {
+      alert('No valid link for this project.');
+    } else {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <section>
       <h2>Projects</h2>
       <div className="project-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-card">
+          <div 
+            key={index} 
+            className="project-card" 
+            onClick={() => handleCardClick(project.link)}
+          >
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            {project.link !== '#' ? (
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="project-link"
-              >
-                View Project
-              </a>
-            ) : (
-              <span 
-                className="project-link disabled" 
-                onClick={() => alert('No valid link for this project.')}
-              >
-                View Project
-              </span>
-            )}
           </div>
         ))}
       </div>
