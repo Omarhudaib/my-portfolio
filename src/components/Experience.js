@@ -25,9 +25,10 @@ const Experience = () => {
   ];
 
   return (
-    <div> 
+    <div>
+  <h2>Experience</h2>
     <section className='experiences'>
-     <h2>Experience</h2>
+    
       {experiences.map((exp, index) => (
         <div key={index} style={{ marginBottom: '20px' }}>
           <h3>{exp.role}</h3>
