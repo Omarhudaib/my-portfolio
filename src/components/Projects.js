@@ -31,10 +31,9 @@ const Projects = () => {
     },
     { 
       title: 'Saas HR System for Companies', 
-      description: 'A web platform for HR management supporting multiple companies, built with Laravel and React ,', 
+      description: 'A web platform for HR management supporting multiple companies, built with Laravel and React.', 
       link: 'https://dawam-alpha.vercel.app/' 
     },
-
   ];
 
   return (
@@ -45,20 +44,20 @@ const Projects = () => {
           <div key={index} className="project-card">
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a 
-              href={project.link === '#' ? undefined : project.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="project-link"
-              onClick={(e) => {
-                if (project.link === '#') {
-                  e.preventDefault();
-                  alert('No valid link for this project.');
-                }
-              }}
-            >
-              View Project
-            </a>
+            {project.link !== '#' ? (
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="project-link"
+              >
+                View Project
+              </a>
+            ) : (
+              <span className="project-link disabled" onClick={() => alert('No valid link for this project.')}>
+                View Project
+              </span>
+            )}
           </div>
         ))}
       </div>
