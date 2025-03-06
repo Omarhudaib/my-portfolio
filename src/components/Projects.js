@@ -25,20 +25,16 @@ const Projects = () => {
       link: 'https://github.com/ahmadsaadaldin/quiz-website' 
     },
     { 
-      title: 'HR and Employee Relationship System', 
+      title: 'HR and Employee Relationship System (dawam)', 
       description: 'A Laravel system to manage HR functions and employee relationships.', 
       link: 'https://github.com/laravelProjectRentalSystem/rental-system-last' 
     },
     { 
-      title: 'Multi-User HR System for Companies', 
-      description: 'A web platform for HR management supporting multiple companies, built with Laravel and React.(work in it)', 
-      link: '#' 
+      title: 'Saas HR System for Companies', 
+      description: 'A web platform for HR management supporting multiple companies, built with Laravel and React ,', 
+      link: 'https://dawam-alpha.vercel.app/' 
     },
-    { 
-      title: 'Subscription-Based Web App', 
-      description: 'A subscription-based web platform built using Laravel and React.', 
-      link: 'https://github.com/contract-system/contact-system' 
-    },
+
   ];
 
   return (
